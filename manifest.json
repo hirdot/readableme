@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub README Extractor",
+  "version": "1.0",
+  "description": "Extracts and displays the table of contents and summary from GitHub repository README files.",
+  "permissions": [
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://github.com/*"
+        
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
+  
